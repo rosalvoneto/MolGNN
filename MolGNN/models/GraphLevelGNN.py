@@ -109,6 +109,8 @@ class GraphLevelGNN(nn.Module):
 
             if (epoch % log_every_epochs == 0) or (epoch == n_epochs - 1):
                 val_loss, val_metric = self.evaluate(val_loader)
+                print(f"Epoch: {epoch + 1:3d}/{n_epochs:3d} |")
+                print(f" val loss: {val_loss:8.3f} | val metric: {val_metric:8.3f}")
 
                 self.logger.info(
                     f"Epoch: {epoch + 1:3d}/{n_epochs:3d} |"
